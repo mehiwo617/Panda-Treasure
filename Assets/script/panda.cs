@@ -10,6 +10,7 @@ public class panda : MonoBehaviour
     private Animator anim;
     private Rigidbody rigid;
     GameObject director;
+    public bool canstart;
 
     /* 宝物見つけたときの効果音よう */
     public AudioClip treasureSE;
@@ -17,6 +18,7 @@ public class panda : MonoBehaviour
 
     void Start()
     {
+        canstart = false;
         this.director = GameObject.Find("GameDirector");
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
@@ -26,49 +28,52 @@ public class panda : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetBool("walking", false);
-        // 左に移動
-        if (Input.GetKey(KeyCode.A))
+        if (canstart)
         {
-            this.transform.Translate(0.0f, 0.0f, -0.05f);
-            anim.SetBool("walking", true);
-        }
-        // 右に移動
-        if (Input.GetKey(KeyCode.D))
-        {
-            this.transform.Translate(0.0f, 0.0f, 0.05f);
-            anim.SetBool("walking", true);
-        }
-        // 前に移動
-        if (Input.GetKey(KeyCode.W))
-        {
-            this.transform.Translate(-0.05f, 0.0f, 0.0f);
-            anim.SetBool("walking", true);
-        }
-        // 後ろに移動
-        if (Input.GetKey(KeyCode.S))
-        {
-            this.transform.Translate(0.05f, 0.0f, 0.0f);
-            anim.SetBool("walking", true);
-        }
+            anim.SetBool("walking", false);
+            // 左に移動
+            if (Input.GetKey(KeyCode.A))
+            {
+                this.transform.Translate(0.0f, 0.0f, -0.05f);
+                anim.SetBool("walking", true);
+            }
+            // 右に移動
+            if (Input.GetKey(KeyCode.D))
+            {
+                this.transform.Translate(0.0f, 0.0f, 0.05f);
+                anim.SetBool("walking", true);
+            }
+            // 前に移動
+            if (Input.GetKey(KeyCode.W))
+            {
+                this.transform.Translate(-0.1f, 0.0f, 0.0f);
+                anim.SetBool("walking", true);
+            }
+            // 後ろに移動
+            if (Input.GetKey(KeyCode.S))
+            {
+                this.transform.Translate(0.07f, 0.0f, 0.0f);
+                anim.SetBool("walking", true);
+            }
 
-        // 右回転
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            this.transform.Rotate(0.0f, 0.5f, 0.0f);
-        }
+            // 右回転
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                this.transform.Rotate(0.0f, 1.0f, 0.0f);
+            }
 
-        // 左回転
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            this.transform.Rotate(0.0f, -0.5f, 0.0f);
-        }
+            // 左回転
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                this.transform.Rotate(0.0f, -1.0f, 0.0f);
+            }
 
 
-        // ジャンプする
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rigid.AddForce(transform.up * this.jumpPower);
+            // ジャンプする
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rigid.AddForce(transform.up * this.jumpPower);
+            }
         }
     }
 
@@ -80,6 +85,15 @@ public class panda : MonoBehaviour
         {
             this.aud.PlayOneShot(this.treasureSE);
             this.director.GetComponent<GameDirector>().GetTreasure();
+            Debug.Log("Catch!!!!");
+            Destroy(collider.gameObject);
+        }
+
+        /* Rareなら */
+        if (collider.CompareTag("Rare"))
+        {
+            this.aud.PlayOneShot(this.treasureSE);
+            this.director.GetComponent<GameDirector>().GetRare();
             Debug.Log("Catch!!!!");
             Destroy(collider.gameObject);
         }

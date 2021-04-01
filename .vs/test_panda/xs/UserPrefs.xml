@@ -1,9 +1,11 @@
 ﻿<Properties StartupConfiguration="{93350111-DF35-3191-2C90-097005B54B44}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/script/panda.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/script/GameDirector.cs">
     <Files>
-      <File FileName="Assets/script/panda.cs" Line="70" Column="13" />
-      <File FileName="Assets/script/GameDirector.cs" Line="13" Column="9" />
-      <File FileName="Assets/script/TresureController.cs" Line="9" Column="1" />
+      <File FileName="Assets/script/panda.cs" Line="96" Column="63" IsPinned="True" />
+      <File FileName="Assets/script/GameDirector.cs" Line="67" Column="26" />
+      <File FileName="Assets/script/TresureController.cs" Line="10" Column="17" />
+      <File FileName="Assets/script/SceneManager.cs" Line="22" Column="26" />
+      <File FileName="Assets/script/StartBottun.cs" Line="8" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
