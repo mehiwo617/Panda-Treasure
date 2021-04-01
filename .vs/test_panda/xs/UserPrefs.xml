@@ -1,31 +1,21 @@
 ﻿<Properties StartupConfiguration="{93350111-DF35-3191-2C90-097005B54B44}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/script/panda.cs">
     <Files>
-      <File FileName="Assets/script/panda.cs" Line="9" Column="34" />
-      <File FileName="Assets/Unity_Bible/03_Char_Control/Script/Action3dCam.cs" Line="19" Column="1" />
+      <File FileName="Assets/script/panda.cs" Line="70" Column="13" />
+      <File FileName="Assets/script/GameDirector.cs" Line="13" Column="9" />
+      <File FileName="Assets/script/TresureController.cs" Line="9" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="test_panda" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="script" expanded="True">
-                <Node name="panda.cs" selected="True" />
-              </Node>
-              <Node name="Unity_Bible" expanded="True">
-                <Node name="03_Char_Control" expanded="True">
-                  <Node name="Script" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
+          <Node name="test_panda" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4c44f639-1b3d-459f-9a41-f9fa1a5cf678" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="655c090b-7d71-4981-9fe8-33575b48bab7" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
